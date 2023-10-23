@@ -1,0 +1,294 @@
+
+    {
+        "quizId": "QUIZ00001",
+        "quizName": "ITE1001",
+        "facultyId": "FAC2002",
+        "listOfQuestions": [
+            {
+                "questionId": 1,
+                "question": "Java is what type of programming language?",
+                "answer": "OOPS",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "OOPS",
+                    "option2": "Structure",
+                    "option3": "Procedure",
+                    "option4": "SQL",
+                    "option5": ""
+                },
+                "questionBelongsTo": {
+                    "quizId": "QUIZ00001",
+                    "quizName": "ITE1001",
+                    "facultyId": "FAC2002",
+                    "listOfQuestions": [
+                        {
+                            "questionId": 1,
+                            "question": "Java is what type of programming language?",
+                            "answer": "OOPS",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "OOPS",
+                                "option2": "Structure",
+                                "option3": "Procedure",
+                                "option4": "SQL",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 2,
+                            "question": "What is DBMS?",
+                            "answer": "Database Management System",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Database",
+                                "option2": "Database Monitor system",
+                                "option3": "Database Management system",
+                                "option4": "Database maintain system",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 3,
+                            "question": "What is DSA?",
+                            "answer": "Data structure and algorithms",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Data structure and algorithms",
+                                "option2": "Data structure and algumbus",
+                                "option3": "Data structure and analogs",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 4,
+                            "question": "What is OOPS?",
+                            "answer": "Object Orient Problem Solving",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Object Orient Problem Solving",
+                                "option2": "Object Orient Solving Problem",
+                                "option3": "Object Orient Generating Solving",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 5,
+                            "question": "What is Primary Key?",
+                            "answer": "Unique Id",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "SSN",
+                                "option2": "Name",
+                                "option3": "DOB",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 6,
+                            "question": "What is ForeignKey?",
+                            "answer": "Primary key of another table",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Primary key of another table",
+                                "option2": "Unique key of another table",
+                                "option3": "Name key of another table",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 7,
+                            "question": "What is super key word?",
+                            "answer": "refers to the immediate parent object",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Primary key of another table",
+                                "option2": "refers to the immediate parent object",
+                                "option3": "refers to the current object",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 8,
+                            "question": "What is serializaton?",
+                            "answer": "Write object to the file",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Write object to the object",
+                                "option2": "Write object to the file",
+                                "option3": "Write object to the class",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 9,
+                            "question": "What is AI??",
+                            "answer": "Artificial intelegence",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Artificial intelegence",
+                                "option2": "Artificial idea",
+                                "option3": "Artificial illa",
+                                "option4": "Artificial iruku",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        },
+                        {
+                            "questionId": 10,
+                            "question": "What is Data Mining?",
+                            "answer": "Fetch answer from a list of data",
+                            "maximumMark": 1,
+                            "options": {
+                                "option1": "Fetch answer from a list of data",
+                                "option2": "Fetch question from a list of data",
+                                "option3": "Fetch option from a list of data",
+                                "option4": "",
+                                "option5": ""
+                            },
+                            "questionBelongsTo": "QUIZ00001"
+                        }
+                    ]
+                }
+            },
+            {
+                "questionId": 2,
+                "question": "What is DBMS?",
+                "answer": "Database Management System",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Database",
+                    "option2": "Database Monitor system",
+                    "option3": "Database Management system",
+                    "option4": "Database maintain system",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 3,
+                "question": "What is DSA?",
+                "answer": "Data structure and algorithms",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Data structure and algorithms",
+                    "option2": "Data structure and algumbus",
+                    "option3": "Data structure and analogs",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 4,
+                "question": "What is OOPS?",
+                "answer": "Object Orient Problem Solving",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Object Orient Problem Solving",
+                    "option2": "Object Orient Solving Problem",
+                    "option3": "Object Orient Generating Solving",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 5,
+                "question": "What is Primary Key?",
+                "answer": "Unique Id",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "SSN",
+                    "option2": "Name",
+                    "option3": "DOB",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 6,
+                "question": "What is ForeignKey?",
+                "answer": "Primary key of another table",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Primary key of another table",
+                    "option2": "Unique key of another table",
+                    "option3": "Name key of another table",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 7,
+                "question": "What is super key word?",
+                "answer": "refers to the immediate parent object",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Primary key of another table",
+                    "option2": "refers to the immediate parent object",
+                    "option3": "refers to the current object",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 8,
+                "question": "What is serializaton?",
+                "answer": "Write object to the file",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Write object to the object",
+                    "option2": "Write object to the file",
+                    "option3": "Write object to the class",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 9,
+                "question": "What is AI??",
+                "answer": "Artificial intelegence",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Artificial intelegence",
+                    "option2": "Artificial idea",
+                    "option3": "Artificial illa",
+                    "option4": "Artificial iruku",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            },
+            {
+                "questionId": 10,
+                "question": "What is Data Mining?",
+                "answer": "Fetch answer from a list of data",
+                "maximumMark": 1,
+                "options": {
+                    "option1": "Fetch answer from a list of data",
+                    "option2": "Fetch question from a list of data",
+                    "option3": "Fetch option from a list of data",
+                    "option4": "",
+                    "option5": ""
+                },
+                "questionBelongsTo": "QUIZ00001"
+            }
+        ]
+    }

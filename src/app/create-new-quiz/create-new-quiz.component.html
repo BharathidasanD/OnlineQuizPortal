@@ -1,0 +1,86 @@
+{{newQuiz.value | json}}
+<mat-card class="mat-card">
+    <mat-card-header>
+        <mat-card-title>Create New Quiz</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="newQuiz" (submit)="submit()">
+        <mat-card-content class="mat-card-content">
+
+            <div class="form-input">
+                <mat-form-field class="answer">
+                    <mat-label>Quiz Name</mat-label>
+                    <input formControlName="quizName" name="quizName" matInput type="text">
+                </mat-form-field>
+            </div>
+
+            <div class="form-input">
+                <mat-form-field class="answer">
+                    <mat-label>Faculty Id</mat-label>
+                    <input matInput formControlName="facultyId" name="facultyId" type="text">
+                </mat-form-field>
+            </div>
+
+            <mat-label>Quiz Questions:</mat-label>
+            <mat-tab-group [selectedIndex]="currentTab">
+                <div class="form-input" formArrayName="listOfQuestions">
+                    <mat-tab label="{{'Question'+(i+1)}}"
+                        *ngFor="let fetchQuestion of listOfQuestions.controls; let i=index" [formGroupName]="i">
+                        <br>
+                        <mat-form-field class="question">
+                            <mat-label>Quiz Question : {{i+1}} </mat-label>
+                            <input matInput formControlName="question" name="question" type="text">
+                        </mat-form-field>
+                        <div>
+                            <mat-form-field class="answer">
+                                <mat-label>Answer:</mat-label>
+                                <input matInput formControlName="answer" name="answer" type="text">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="answer">
+                                <mat-label>Maximum Marks:</mat-label>
+                                <input matInput formControlName="maximumMark" name="maximumMark" type="text">
+                            </mat-form-field>
+                        </div>
+                        <ng-container formGroupName="options">
+                            <mat-list>
+                                <mat-list-item>
+                                    <mat-form-field class="option">
+                                        <input class="form-input" matInput formControlName="option1" placeholder="Option 1">
+                                    </mat-form-field>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <mat-form-field class="option">
+                                        <input class="form-input" matInput formControlName="option2" placeholder="Option 2">
+                                    </mat-form-field>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <mat-form-field class="option">
+                                        <input class="form-input" matInput formControlName="option3" placeholder="Option 3">
+                                    </mat-form-field>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <mat-form-field class="option">
+                                        <input class="form-input" matInput formControlName="option4" placeholder="Option 4">
+                                    </mat-form-field>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <mat-form-field class="option">
+                                        <input class="form-input" matInput formControlName="option5" placeholder="Option 5">
+                                    </mat-form-field>
+                                </mat-list-item>
+                            </mat-list>   
+                        </ng-container>
+                        <button (click)="removeQuestion(i)" mat-raised-button color="warn">Remove Question</button>
+                    </mat-tab>
+                </div>
+
+            </mat-tab-group>
+
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button (click)="addQuestion()" mat-raised-button type="button" color="warn">Add Question</button>
+            <button type="submit"  mat-raised-button color="warn">Submit</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

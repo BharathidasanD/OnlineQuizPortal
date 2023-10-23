@@ -1,0 +1,109 @@
+{
+    "quizName": "ITE1001",
+    "facultyId": "FAC2002",
+    "listOfQuestions": [
+        {
+            "question": "Java is what type of programming language?",
+            "answer": "OOPS",
+            "maximumMark": "1",
+            "options": {
+                "option1": "OOPS",
+                "option2": "Structure",
+                "option3": "Procedure",
+                "option4": "SQL"
+            }
+        },
+        {
+            "question": "What is DBMS?",
+            "answer": "Database Management System",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Database",
+                "option2": "Database Monitor system",
+                "option3": "Database Management system",
+                "option4": "Database maintain system"
+            }
+        },
+        {
+            "question": "What is DSA?",
+            "answer": "Data structure and algorithms",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Data structure and algorithms",
+                "option2": "Data structure and algumbus",
+                "option3": "Data structure and analogs"
+            }
+        },
+        {
+            "question": "What is OOPS?",
+            "answer": "Object Orient Problem Solving",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Object Orient Problem Solving",
+                "option2": "Object Orient Solving Problem",
+                "option3": "Object Orient Generating Solving"
+            }
+        },
+        {
+            "question": "What is Primary Key?",
+            "answer": "Unique Id",
+            "maximumMark": "1",
+            "options": {
+                "option1": "SSN",
+                "option2": "Name",
+                "option3": "DOB"
+            }
+        },
+        {
+            "question": "What is ForeignKey?",
+            "answer": "Primary key of another table",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Primary key of another table",
+                "option2": "Unique key of another table",
+                "option3": "Name key of another table"
+            }
+        },
+        {
+            "question": "What is super key word?",
+            "answer": "refers to the immediate parent object",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Primary key of another table",
+                "option2": "refers to the immediate parent object",
+                "option3": "refers to the current object"
+            }
+        },
+        {
+            "question": "What is serializaton?",
+            "answer": "Write object to the file",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Write object to the object",
+                "option2": "Write object to the file",
+                "option3": "Write object to the class"
+            }
+        },
+        {
+            "question": "What is AI??",
+            "answer": "Artificial intelegence",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Artificial intelegence",
+                "option2": "Artificial idea",
+                "option3": "Artificial illa",
+                "option4": "Artificial iruku"
+            }
+        },
+        {
+            "question": "What is Data Mining?",
+            "answer": "Fetch answer from a list of data",
+            "maximumMark": "1",
+            "options": {
+                "option1": "Fetch answer from a list of data",
+                "option2": "Fetch question from a list of data",
+                "option3": "Fetch option from a list of data"
+            }
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "quizName": "CSE10001",
+    "facultyId": "FAC2002",
+    "listOfQuestions": [
+        {
+            "question": "What is Java?",
+            "answer": "PL",
+            "maximumMark": "1",
+            "options": [
+                {
+                    "option1": "ML"
+                },
+                {
+                    "option2": "AI"
+                },
+                {
+                    "option3": "DS"
+                },
+                {
+                    "option4": "DSA"
+                }
+            ]
+        },
+        {
+            "question": "List some data structures?",
+            "answer": "LinkedList",
+            "maximumMark": "1",
+            "options": [
+                {
+                    "option1": "Nan"
+                },
+                {
+                    "option2": "rotti"
+                },
+                {
+                    "option3": "chappathi"
+                }
+            ]
+        },
+        {
+            "question": "What is python?",
+            "answer": "Simple language",
+            "maximumMark": "1",
+            "options": [
+                {
+                    "option1": "DS"
+                },
+                {
+                    "option2": "ML"
+                },
+                {
+                    "option3": "DSA"
+                }
+            ]
+        }
+    ]
+}
