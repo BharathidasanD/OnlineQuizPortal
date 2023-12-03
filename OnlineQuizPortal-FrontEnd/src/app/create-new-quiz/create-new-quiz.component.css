@@ -17,4 +17,14 @@
  width: 70%;
   }
   
+  .formRight {
+    width: 48%;
+    float:right;
+    align-items: flex-start;
+  }
+  .formLeft {
+    width: 48%;
+    float: left;
+    align-items: flex-end;
+  }
   

@@ -1,20 +1,14 @@
 package com.quiz.portal.online.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "STUDENT_INFO")
-public class Student {
-	@Id
-	@GenericGenerator(name = "sequence_student_id", strategy = "com.quiz.portal.online.idgenerators.StudentIdGenerator")
-	@GeneratedValue(generator = "sequence_student_id")
-	@Column(name = "STUDENT_ID")
+public class Student extends User {
+
+	@Column(name = "STUDENT_ID", unique = true)
 	private String studentId;
 	@Column(name = "STUDENT_NAME")
 	private String studentName;
@@ -24,8 +18,6 @@ public class Student {
 	private String studentContact;
 	@Column(name = "STUDENT_SCHOOL")
 	private String studentSchool;
-	@Column(name = "STUDENT_PASSWORD")
-	private String studentPassword;
 
 	public String getStudentId() {
 		return studentId;
@@ -67,19 +59,11 @@ public class Student {
 		this.studentSchool = studentSchool;
 	}
 
-	public String getStudentPassword() {
-		return studentPassword;
-	}
-
-	public void setStudentPassword(String studentPassword) {
-		this.studentPassword = studentPassword;
-	}
-
 	@Override
 	public String toString() {
 		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentEmail=" + studentEmail
-				+ ", studentContact=" + studentContact + ", studentSchool=" + studentSchool + ", studentPassword="
-				+ studentPassword + "]";
+				+ ", studentContact=" + studentContact + ", studentSchool=" + studentSchool + "]";
 	}
+
 
 }

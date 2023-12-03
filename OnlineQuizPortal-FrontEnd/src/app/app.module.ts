@@ -21,7 +21,11 @@ import { QuizDetailComponent } from './quiz-detail/quiz-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateNewQuizComponent } from './create-new-quiz/create-new-quiz.component';
 import { QuizService } from './Services/quiz.service';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MyQuizComponent } from './my-quiz/my-quiz.component';
+import { MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,9 @@ import { QuizService } from './Services/quiz.service';
 
     QuizDetailComponent,
 
-    CreateNewQuizComponent
+    CreateNewQuizComponent,
+     MyQuizComponent,
+     LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,11 @@ import { QuizService } from './Services/quiz.service';
     ReactiveFormsModule,
     MatTabsModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatTableModule, 
+    MatPaginatorModule
+    
   ],
   providers: [QuizService],
   bootstrap: [AppComponent]

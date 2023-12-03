@@ -1,29 +1,23 @@
 package com.quiz.portal.online.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "FACULTY_TABLE")
-public class Faculty {
+@Table(name = "FACULTY_INFO")
+public class Faculty extends User {
 
-	@Id
-	@GenericGenerator(name = "sequence_faculty_id", strategy = "com.quiz.portal.online.idgenerators.FacultyIdGenerator")
-	@GeneratedValue(generator = "sequence_faculty_id")
-	@Column(name = "FACULTY_ID")
+	@Column(name = "FACULTY_ID", unique = true)
 	private String facultyId;
+	@Column(name = "FACULTY_NAME")
 	private String facultyName;
 	@Column(name = "FACULTY_EMAIL", unique = true, nullable = false)
 	private String facultyEmail;
 	@Column(name = "FACULTY_CONTACT", unique = true, nullable = false)
 	private String facultyContact;
+	@Column(name = "FACULTY_SCHOOL_NAME", unique = true, nullable = false)
 	private String facultySchoolName;
-	private String facultyPassword;
 
 	public String getFacultyId() {
 		return facultyId;
@@ -46,7 +40,6 @@ public class Faculty {
 		this.facultyEmail = facultyEmail;
 		this.facultyContact = facultyContact;
 		this.facultySchoolName = facultySchoolName;
-		this.facultyPassword = facultyPassword;
 	}
 
 	public String getFacultyName() {
@@ -81,19 +74,10 @@ public class Faculty {
 		this.facultySchoolName = facultySchoolName;
 	}
 
-	public String getFacultyPassword() {
-		return facultyPassword;
-	}
-
-	public void setFacultyPassword(String facultyPassword) {
-		this.facultyPassword = facultyPassword;
-	}
-
 	@Override
 	public String toString() {
 		return "Faculty [facultyId=" + facultyId + ", facultyName=" + facultyName + ", facultyEmail=" + facultyEmail
-				+ ", facultyContact=" + facultyContact + ", facultySchoolName=" + facultySchoolName
-				+ ", facultyPassword=" + facultyPassword + "]";
+				+ ", facultyContact=" + facultyContact + ", facultySchoolName=" + facultySchoolName + "]";
 	}
 
 }

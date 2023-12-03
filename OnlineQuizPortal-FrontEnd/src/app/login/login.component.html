@@ -1,0 +1,17 @@
+<form [formGroup]="user" (submit)="login()">
+
+
+    <div class="form-input formLeft">
+        <mat-form-field class="answer">
+            <mat-label>Quiz Name</mat-label>
+            <input formControlName="userName" name="User Name" matInput type="text">
+        </mat-form-field>
+    </div>
+
+    <div class="form-input formRight">
+        <mat-form-field class="answer">
+            <mat-label>Faculty Id</mat-label>
+            <input matInput formControlName="password" name="Password" type="text">
+        </mat-form-field>
+    </div>
+</form>

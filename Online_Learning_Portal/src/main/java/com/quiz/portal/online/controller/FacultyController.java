@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quiz.portal.online.idgenerators.GenericIdGenerator;
 import com.quiz.portal.online.model.Faculty;
 import com.quiz.portal.online.service.FacultyService;
 
@@ -20,9 +21,13 @@ public class FacultyController {
 
 	@Autowired
 	FacultyService facultyService;
+	
+	@Autowired
+	GenericIdGenerator idGenerator;
 
 	@RequestMapping(value = "/addfaculty", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public Faculty addNewFaculty(@RequestBody Faculty newFaculty) {
+		newFaculty.setFacultyId(idGenerator.getFacultyId());
 		log.info("adding faculty info....");
 		Faculty retunedFac = facultyService.saveFaculty(newFaculty);
 		if (retunedFac != null) {

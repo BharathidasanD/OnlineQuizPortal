@@ -15,4 +15,8 @@ public class StudentService {
 	public Student addNewStudent(Student newStudent) {
 		return studentRepo.save(newStudent);
 	}
+	
+	public long getCount() {
+		return studentRepo.count();
+	}
 }

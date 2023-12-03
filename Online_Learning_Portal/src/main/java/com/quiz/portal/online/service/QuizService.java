@@ -29,4 +29,7 @@ public class QuizService {
 	public Optional<Quiz> getQuizById(String quizId){
 		return quizRepo.findById(quizId);
 	}
+	public List<Quiz> getQuizByFacultyId(String facId){
+		return quizRepo.findByFacultyId(facId);
+	}
 }

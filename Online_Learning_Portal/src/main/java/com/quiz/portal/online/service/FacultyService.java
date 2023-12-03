@@ -21,4 +21,8 @@ public class FacultyService {
 		log.info("Faculty saving..");
 		return facultyRepo.save(newFaculty);
 	}
+	
+	public long getCount() {
+		return facultyRepo.count();
+	}
 }

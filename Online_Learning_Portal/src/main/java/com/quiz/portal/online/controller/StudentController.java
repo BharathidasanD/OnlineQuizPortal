@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quiz.portal.online.idgenerators.GenericIdGenerator;
 import com.quiz.portal.online.model.Student;
 import com.quiz.portal.online.service.StudentService;
 
@@ -19,10 +20,14 @@ public class StudentController {
 	@Autowired
 	StudentService studentService;
 
+	@Autowired
+	GenericIdGenerator idGenerator;
+
 	@PostMapping("/addStudent")
 	public Student addStudent(@RequestBody Student newStudent) {
 
 		log.info("adding Student info....");
+		newStudent.setStudentId(idGenerator.getStudentId());
 		Student retunedStudent = studentService.addNewStudent(newStudent);
 		if (retunedStudent != null) {
 			log.info("student data added sucessfully....");

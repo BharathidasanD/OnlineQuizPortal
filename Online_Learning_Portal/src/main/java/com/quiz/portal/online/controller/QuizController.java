@@ -75,4 +75,14 @@ public class QuizController {
 		return quizService.getQuizById(quizId).orElse(null);
 
 	}
+	
+	@GetMapping("/myquiz/{facId}")
+	public List<Quiz> getQuizByFacultyId(@PathVariable("facId") String facId) {
+		log.info("faculty id===>"+facId);
+		log.info("fetched quiz------" + quizService.getQuizByFacultyId(facId));
+		return quizService.getQuizByFacultyId(facId);
+
+	}
+	
+
 }

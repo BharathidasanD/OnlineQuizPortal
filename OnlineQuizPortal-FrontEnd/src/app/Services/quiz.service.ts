@@ -11,6 +11,7 @@ export class QuizService {
   url: string = "/assets/quizquestions.json";
   testUrl: string = "http://localhost:8080/getallquiz";
   quizUrl = "http://localhost:8080/addquiz";
+  myQuiz="http://localhost:8080/myquiz";
   constructor(private http: HttpClient) { }
 
   getQuiz() {
@@ -19,6 +20,10 @@ export class QuizService {
 
   getTestQuiz(quizId:string) {
     return this.http.get<Quiz>(this.testUrl+"/"+quizId);
+  }
+
+  getQuizByFacultyId(facId:string){
+    return this.http.get<Quiz[]>(this.myQuiz+"/"+facId);
   }
 
   createNewQuiz(newQuiz: Quiz) {

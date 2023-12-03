@@ -27,7 +27,7 @@ export class CreateNewQuizComponent {
       ])
 
     });
-
+this.addQuestion();
 
 
   }

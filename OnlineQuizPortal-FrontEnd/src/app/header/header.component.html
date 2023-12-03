@@ -1,6 +1,8 @@
+
+<div class="example-container">
 <mat-toolbar class="headerBar">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+    <button mat-icon-button class="example-icon"  (click)="snav.toggle()" aria-label="Example icon-button with menu icon">
+       <mat-icon >menu</mat-icon>
     </button>
     <span>My App</span>
     <span class="example-spacer"></span>
@@ -11,3 +13,15 @@
         <mat-icon>share</mat-icon>
     </button>
 </mat-toolbar>
+
+<mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <a (click)="snav.toggle()" mat-list-item routerLink="{{nav.toLowerCase().replace(' ', '')}}" *ngFor="let nav of optionsBasedOnUser">{{nav}}></a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+     <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
