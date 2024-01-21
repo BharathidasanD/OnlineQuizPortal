@@ -1,26 +1,42 @@
 package com.quiz.portal.online.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "FACULTY_INFO")
-public class Faculty extends User {
-
+public class Faculty {
+	@Id
+	@GenericGenerator(name = "sequence_faculty_id", strategy = "com.quiz.portal.online.idgenerators.FacultyIdGenerator")
+	@GeneratedValue(generator = "sequence_faculty_id")
 	@Column(name = "FACULTY_ID", unique = true)
 	private String facultyId;
 	@Column(name = "FACULTY_NAME")
 	private String facultyName;
-	@Column(name = "FACULTY_EMAIL", unique = true, nullable = false)
-	private String facultyEmail;
 	@Column(name = "FACULTY_CONTACT", unique = true, nullable = false)
 	private String facultyContact;
-	@Column(name = "FACULTY_SCHOOL_NAME", unique = true, nullable = false)
+	@Column(name = "FACULTY_SCHOOL_NAME", nullable = false)
 	private String facultySchoolName;
+	@OneToOne(optional = false,cascade = CascadeType.ALL)
+	private User relatedUser;
 
 	public String getFacultyId() {
 		return facultyId;
+	}
+
+	public User getRelatedUser() {
+		return relatedUser;
+	}
+
+	public void setRelatedUser(User relatedUser) {
+		this.relatedUser = relatedUser;
 	}
 
 	public void setFacultyId(String facultyId) {
@@ -32,12 +48,11 @@ public class Faculty extends User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Faculty(String facultyId, String facultyName, String facultyEmail, String facultyContact,
-			String facultySchoolName, String facultyPassword) {
+	public Faculty(String facultyId, String facultyName, String facultyContact,
+			String facultySchoolName) {
 		super();
 		this.facultyId = facultyId;
 		this.facultyName = facultyName;
-		this.facultyEmail = facultyEmail;
 		this.facultyContact = facultyContact;
 		this.facultySchoolName = facultySchoolName;
 	}
@@ -48,14 +63,6 @@ public class Faculty extends User {
 
 	public void setFacultyName(String facultyName) {
 		this.facultyName = facultyName;
-	}
-
-	public String getFacultyEmail() {
-		return facultyEmail;
-	}
-
-	public void setFacultyEmail(String facultyEmail) {
-		this.facultyEmail = facultyEmail;
 	}
 
 	public String getFacultyContact() {
@@ -76,8 +83,10 @@ public class Faculty extends User {
 
 	@Override
 	public String toString() {
-		return "Faculty [facultyId=" + facultyId + ", facultyName=" + facultyName + ", facultyEmail=" + facultyEmail
-				+ ", facultyContact=" + facultyContact + ", facultySchoolName=" + facultySchoolName + "]";
+		return "Faculty [facultyId=" + facultyId + ", facultyName=" + facultyName + ", facultyContact=" + facultyContact
+				+ ", facultySchoolName=" + facultySchoolName + ", relatedUser=" + relatedUser + "]";
 	}
+
+	
 
 }

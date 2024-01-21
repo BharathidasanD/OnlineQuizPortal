@@ -36,7 +36,7 @@ public class FacultyIdGenerator implements IdentifierGenerator {
 			ResultSet rs=session.getJdbcConnectionAccess()
 			.obtainConnection()
 			.createStatement()
-			.executeQuery("select count(*) from FACULTY_TABLE");
+			.executeQuery("select count(*) from FACULTY_INFO");
 			if(rs.next()) {
 				count=rs.getInt(1);
 				count++;

@@ -69,7 +69,7 @@ public class QuizController {
 
 	}
 
-	@GetMapping("/getallquiz/{quizId}")
+	@GetMapping("/getquiz/{quizId}")
 	public Quiz getQuizById(@PathVariable("quizId") String quizId) {
 		log.info("fetched quiz------" + quizService.getQuizById(quizId));
 		return quizService.getQuizById(quizId).orElse(null);
