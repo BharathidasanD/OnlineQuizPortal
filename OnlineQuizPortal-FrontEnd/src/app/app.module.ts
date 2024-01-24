@@ -26,6 +26,12 @@ import { MyQuizComponent } from './my-quiz/my-quiz.component';
 import { MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { FacultyPageComponent } from './faculty-page/faculty-page.component';
+import { StudentPageComponent } from './student-page/student-page.component';
+import { httpInterceptorProviders } from 'src/helpers/http.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +43,12 @@ import { LoginComponent } from './login/login.component';
 
     CreateNewQuizComponent,
      MyQuizComponent,
-     LoginComponent
+     LoginComponent,
+     RegisterComponent,
+     ProfileComponent,
+     AdminPageComponent,
+     FacultyPageComponent,
+     StudentPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +71,7 @@ import { LoginComponent } from './login/login.component';
     MatPaginatorModule
     
   ],
-  providers: [QuizService],
+  providers: [QuizService,httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

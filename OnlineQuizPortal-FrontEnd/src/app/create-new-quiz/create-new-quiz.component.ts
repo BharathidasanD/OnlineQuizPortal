@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Quiz } from '../model/quiz';
 import { QuizService } from '../Services/quiz.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,8 +14,10 @@ export class CreateNewQuizComponent {
   public myQuiz!: Quiz;
   public errMsg!: string;
   public newQuiz!: FormGroup;
+  responseStatus:Object= [];
   currentTab = 1;
-  constructor(private quizService: QuizService, private formBuilder: FormBuilder) {
+  constructor(private quizService: QuizService, private formBuilder: FormBuilder,
+    private route:Router) {
 
   }
   ngOnInit() {
@@ -71,8 +74,15 @@ this.addQuestion();
     ));
     this.myQuiz=this.newQuiz.value;
     console.log("transformed-->"+this.myQuiz.quizName);
+    console.log("facid-->"+this.myQuiz.facultyId);
     this.quizService.createNewQuiz(this.myQuiz).subscribe(
-      data=>console.log(data),
+      data=>{
+       
+        if(data.facultyId !==null && data.facultyId.length>3)
+        {
+            this.route.navigate(['/myquiz',data.facultyId]);
+        }
+      },
       error=>console.error(error)
     );
   }

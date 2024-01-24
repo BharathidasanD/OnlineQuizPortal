@@ -8,7 +8,7 @@ public class OnlineLearningPortalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineLearningPortalApplication.class, args);
-		System.out.println("application started");
+		System.out.println("********Welcome Bharathidasan +++++++++application started++++++++++ ********");
 	}
 
 }

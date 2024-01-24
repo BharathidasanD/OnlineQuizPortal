@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Quiz } from '../model/quiz';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { QuizService } from '../Services/quiz.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-quiz-detail',
   templateUrl: './quiz-detail.component.html',
@@ -12,7 +13,9 @@ export class QuizDetailComponent {
   public errMsg!: string;
   public editQuiz!: FormGroup;
   currentTab = 1;
-  constructor(private quizService: QuizService, private formBuilder: FormBuilder) {
+  private quizId!: string;
+  constructor(private quizService: QuizService, private formBuilder: FormBuilder,
+    private activatedRouter:ActivatedRoute) {
     
   }
   ngOnInit() {
@@ -24,11 +27,12 @@ export class QuizDetailComponent {
       ])
 
     });
-    this.editQuiz.patchValue({
-      "facultyId":"FAC2002"
+    this.activatedRouter.paramMap.subscribe((params: ParamMap) => {
+      let quiz_id = params.get('quizId');
+      console.log("parsed quizId id:"+ quiz_id);
+      this.quizId=quiz_id as string;
     })
-
-   this.quizService.getTestQuiz(this.editQuiz.value.facultyId).subscribe(
+   this.quizService.getQuizById(this.quizId).subscribe(
      (response) => {
         console.log("data " + response.quizName);
      this.loadData(response);

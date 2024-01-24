@@ -9,7 +9,7 @@ import { Quiz } from '../model/quiz';
 export class QuizService {
   public fetchedQuiz!: Quiz;
   url: string = "/assets/quizquestions.json";
-  testUrl: string = "http://localhost:8080/getallquiz";
+  quizById: string = "http://localhost:8080/getquiz";
   quizUrl = "http://localhost:8080/addquiz";
   myQuiz="http://localhost:8080/myquiz";
   constructor(private http: HttpClient) { }
@@ -18,8 +18,8 @@ export class QuizService {
     return this.http.get<Quiz>(this.url);
   }
 
-  getTestQuiz(quizId:string) {
-    return this.http.get<Quiz>(this.testUrl+"/"+quizId);
+  getQuizById(quizId:string) {
+    return this.http.get<Quiz>(this.quizById+"/"+quizId);
   }
 
   getQuizByFacultyId(facId:string){
