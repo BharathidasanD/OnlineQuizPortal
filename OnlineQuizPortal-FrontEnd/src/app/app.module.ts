@@ -32,6 +32,10 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { FacultyPageComponent } from './faculty-page/faculty-page.component';
 import { StudentPageComponent } from './student-page/student-page.component';
 import { httpInterceptorProviders } from 'src/helpers/http.interceptor';
+import { AddFacultyComponent } from './add-faculty/add-faculty.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { UserManagerComponent } from './user-manager/user-manager.component';
+import { UserRoleManagerComponent } from './user-role-manager/user-role-manager.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +52,10 @@ import { httpInterceptorProviders } from 'src/helpers/http.interceptor';
      ProfileComponent,
      AdminPageComponent,
      FacultyPageComponent,
-     StudentPageComponent
+     StudentPageComponent,
+     AddFacultyComponent,
+     UserManagerComponent,
+     UserRoleManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +75,9 @@ import { httpInterceptorProviders } from 'src/helpers/http.interceptor';
     HttpClientModule,
     MatSidenavModule,
     MatTableModule, 
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
+    
     
   ],
   providers: [QuizService,httpInterceptorProviders],

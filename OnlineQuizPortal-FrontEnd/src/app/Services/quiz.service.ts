@@ -9,9 +9,9 @@ import { Quiz } from '../model/quiz';
 export class QuizService {
   public fetchedQuiz!: Quiz;
   url: string = "/assets/quizquestions.json";
-  quizById: string = "http://localhost:8080/getquiz";
-  quizUrl = "http://localhost:8080/addquiz";
-  myQuiz="http://localhost:8080/myquiz";
+  quizById: string = "/api/quiz/getquiz";
+  quizUrl = "/api/quiz/addquiz";
+  myQuiz="/api/quiz/myquiz";
   constructor(private http: HttpClient) { }
 
   getQuiz() {

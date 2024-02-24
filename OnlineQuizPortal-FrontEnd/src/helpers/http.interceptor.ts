@@ -8,7 +8,6 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     req = req.clone({
       withCredentials: true,
     });
-
     return next.handle(req);
   }
 }

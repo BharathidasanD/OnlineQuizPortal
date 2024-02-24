@@ -1,0 +1,43 @@
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+
+  .full-width
+{
+  width:200%;
+}
+.table-width
+{
+ width:60%;
+
+}
+.half-width
+{
+  width:100%;
+
+  
+}
+.sidebar
+{
+  float: left;
+  height:485px;
+  width:200px;
+  background-color: midnightblue;
+}
+.form
+{
+    margin-top: 5%;
+    width:70%;
+    margin-left: 10%;
+}
+.text
+{
+  color:white;
+}

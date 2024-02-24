@@ -42,7 +42,7 @@ import com.quiz.portal.online.service.StudentService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200" ,maxAge = 3600, allowCredentials="true")
 @RestController
 @RequestMapping("/api/auth")
 @Slf4j

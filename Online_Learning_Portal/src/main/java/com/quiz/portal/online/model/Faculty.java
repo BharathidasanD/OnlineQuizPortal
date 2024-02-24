@@ -24,7 +24,7 @@ public class Faculty {
 	private String facultyContact;
 	@Column(name = "FACULTY_SCHOOL_NAME", nullable = false)
 	private String facultySchoolName;
-	@OneToOne(optional = false,cascade = CascadeType.ALL)
+	@OneToOne(optional = false)
 	private User relatedUser;
 
 	public String getFacultyId() {

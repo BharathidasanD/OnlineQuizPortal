@@ -1,0 +1,57 @@
+<div class="form">
+    <div class="sidebar">
+        <h4 [style.color]="(message==='Already Registered email or phone')?'red':'green'"> {{message}}
+            <br>
+            <div *ngIf="message!=='Already Registered email or phone' && message.length!==0">
+                <p>Redirecting to Home</p>
+                <p *ngIf="message!=='Already Registered email or phone' && message.length!==0?goHome():false"></p>
+            </div>
+
+        </h4>
+
+        <h3 class="text">Welcome to Learning...</h3>
+
+
+    </div>
+
+    <form class="sidebarin" #regForm="ngForm">
+        <table class="table-width">
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>User Id:</mat-label>
+                        <input type="text" matInput required name="Id" [(ngModel)]="userModel.id"
+                            #id="ngModel" disabled="true">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Email:</mat-label>
+                        <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" matInput
+                            placeholder="agular@gmail.com" [(ngModel)]="userModel.email" name="email"
+                            #email="ngModel" disabled="true">
+                    </mat-form-field>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-label>Roles:</mat-label>
+                    <section class="example-section" >
+                        <mat-checkbox *ngFor="let role of userRoles" class="example-margin" [checked]="userModel.roles.indexOf(role)>=0?true:false" (click)="addRroles($event)"  value="{{role}}">{{role}}
+                            <br>
+                        </mat-checkbox>
+                        <!--<mat-checkbox class="example-margin" (click)="addRroles($event)" value="ROLE_FACULTY" >Faculty</mat-checkbox>
+                        <mat-checkbox class="example-margin" (click)="addRroles($event)"  value="ROLE_STUDENT">Student</mat-checkbox>-->
+                    </section>
+
+                </td>
+            </tr>
+            <tr>
+                <td><button mat-raised-button type="submit" [disabled]="regForm.form.invalid"
+                        (click)="saveUser()">Save</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

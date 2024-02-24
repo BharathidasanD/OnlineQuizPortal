@@ -24,7 +24,7 @@ import com.quiz.portal.online.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/faculty")
 @Slf4j

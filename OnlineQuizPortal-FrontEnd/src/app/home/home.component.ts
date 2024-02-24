@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getPublicContent().subscribe({
+   /* this.userService.getPublicContent().subscribe({
       next: data => {
         this.content = data;
       },
@@ -23,6 +23,6 @@ export class HomeComponent implements OnInit {
           this.content = "Error with status: " + err.status;
         }
       }
-    });
+    });*/
   }
 }

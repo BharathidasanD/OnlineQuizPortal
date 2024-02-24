@@ -3,13 +3,12 @@ package com.quiz.portal.online.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -25,7 +24,9 @@ public class User {
 	protected String password;
 	protected String email;
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "USER_ROLES_TYPE", joinColumns = @JoinColumn(name = "userId"), inverseJoinColumns = @JoinColumn(name = "userRoleId"))
+	 @JoinTable(name = "USER_ROLES_TYPE", joinColumns = @JoinColumn(name =
+	 "userId"), inverseJoinColumns = @JoinColumn(name = "userRoleId"))
+//	@JoinTable(name = "USER_ROLES_TYPE", joinColumns = @JoinColumn(name = "userId"))
 	private Set<UserRoles> roles = new HashSet<>();
 
 	public User() {
@@ -33,7 +34,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User( String email, String password) {
+	public User(String email, String password) {
 		super();
 		this.password = password;
 		this.email = email;
@@ -75,6 +76,5 @@ public class User {
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", email=" + email + ", roles=" + roles + "]";
 	}
-	
 
 }

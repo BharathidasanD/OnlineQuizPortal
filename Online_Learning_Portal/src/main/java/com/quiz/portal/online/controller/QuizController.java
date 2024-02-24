@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quiz.portal.online.model.Quiz;
@@ -19,6 +20,7 @@ import com.quiz.portal.online.service.QuizQuestionsService;
 import com.quiz.portal.online.service.QuizService;
 
 @RestController
+@RequestMapping("/api/quiz")
 @CrossOrigin(origins = "http://localhost:4200")
 public class QuizController {
 	private static final Logger log = LogManager.getLogger(QuizController.class);

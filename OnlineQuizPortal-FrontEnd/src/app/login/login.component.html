@@ -1,65 +1,112 @@
-<div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
-      <form
-        *ngIf="!isLoggedIn"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-      >
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            class="form-control"
-            name="username"
-            [(ngModel)]="form.username"
-            required
-            #username="ngModel"
-            [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
-          />
-          <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
-            Username is required!
-          </div>
+<!--<div class="col-md-12">
+  <div class="card card-container">
+    <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+    <form class="example-form" *ngIf="!isLoggedIn" name="form" (ngSubmit)="loginForm.form.valid && onSubmit()"
+      #loginForm="ngForm" novalidate>
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel"
+          [ngClass]="{ 'is-invalid': loginForm.submitted && username.errors }" />
+        <div *ngIf="username.errors && loginForm.submitted" class="invalid-feedback">
+          Username is required!
         </div>
-        <div class="form-group">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <div class="form-input">
           <label for="password">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            name="password"
-            [(ngModel)]="form.password"
-            required
-            minlength="6"
-            #password="ngModel"
-            [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
-          />
-          <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+            #password="ngModel" [ngClass]="{ 'is-invalid': loginForm.submitted && password.errors }" />
+          <div *ngIf="password.errors && loginForm.submitted" class="invalid-feedback">
             <div *ngIf="password.errors['required']">Password is required</div>
             <div *ngIf="password.errors['minlength']">
               Password must be at least 6 characters
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block">
-            Login
-          </button>
-        </div>
-        <div class="form-group">
-          <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" role="alert">
-            Login failed: {{ errorMessage }}
-          </div>
-        </div>
-      </form>
-  
-      <div class="alert alert-success" *ngIf="isLoggedIn">
-        Logged in as {{ roles }}.
+      </mat-form-field>
+
+      <div class="form-input">
+        <button type="submit" class="btn btn-primary btn-block">
+          Login
+        </button>
       </div>
+      <div class="form-input">
+        <div *ngIf="loginForm.submitted && isLoginFailed" class="alert alert-danger" role="alert">
+          Login failed: {{ errorMessage }}
+        </div>
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isLoggedIn">
+      Logged in as {{ roles }}.
     </div>
   </div>
+</div>-->
+
+<div class="form">
+  <div class="sidebar">
+      <h4 style="color:red"> {{errorMessage}}</h4>
+      <!--<h4 [style.color]="(message==='inavlid user')?'red':'green'"> {{message}}
+          <br>
+          <div *ngIf="message!=='invalid user' && message.length!==0">
+              <p>Redirecting to Home</p>
+              <p *ngIf="message!=='invalid user' && message.length!==0?true:false"></p>
+          </div>
+
+      </h4>-->
+
+      <h3 class="text">Welcome to Learning...</h3>
+
+
+  </div>
+
+  <form class="sidebarin" #loginForm="ngForm">
+      <table class="table-width">
+
+          <tr>
+              <td>
+                  <mat-form-field appearance="fill" class="half-width">
+                      <mat-label>Email:</mat-label>
+                      <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" matInput
+                          placeholder="agular@gmail.com" name="email" [(ngModel)]="form.email"
+                          #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+                      <small class="text-danger" [class.d-none]="email.valid || email.untouched">Enter valid
+                          email</small>
+                  </mat-form-field>
+              </td>
+          </tr>
+
+          <tr>
+              <td>
+                  <mat-form-field appearance="fill" class="half-width">
+                      <mat-label> Password:</mat-label>
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required matInput
+                          placeholder="***" name="password" #password="ngModel" [(ngModel)]="form.password"
+                          [class.is-invalid]="password.invalid && password.touched">
+                      <small class="text-danger" [class.d-none]="password.valid || password.untouched">Enter valid password</small>
+                  </mat-form-field>
+              </td>
+
+          </tr>
+
+
+          <tr>
+              <td><button mat-raised-button type="submit" [disabled]="loginForm.form.invalid" style="margin-left: 40%;" (click)='onSubmit()'
+                      >Login</button></td>
+          </tr>
+          <tr>
+              <td>
+                  <div style="color:indigo;">
+
+                      <a routerLink="/register">
+                          <h4>New User? Sign Up</h4>
+                      </a>
+                  </div>
+              </td>
+          </tr>
+      </table>
+  </form>
+</div>

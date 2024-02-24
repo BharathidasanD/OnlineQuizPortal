@@ -1,6 +1,7 @@
 .table-width
 {
- width:60%;
+ width:50%;
+ background-color: gainsboro;
 
 }
 .half-width
@@ -19,6 +20,8 @@
     margin-top: 5%;
     width:70%;
     margin-left: 22%;
+    height: 300px;
+    
 }
 .text
 {

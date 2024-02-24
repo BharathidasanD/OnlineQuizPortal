@@ -25,7 +25,7 @@ public class Student {
 	private String studentContact;
 	@Column(name = "STUDENT_SCHOOL")
 	private String studentSchool;
-	@OneToOne(optional = false,cascade = CascadeType.ALL)
+	@OneToOne(optional = false)
 	private User relatedUser;
 
 	public String getStudentId() {

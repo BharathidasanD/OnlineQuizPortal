@@ -1,6 +1,9 @@
 package com.quiz.portal.online.dto;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.quiz.portal.online.model.User;
 
 public class UserInfoResponse {
 	private Long id;
@@ -13,6 +16,16 @@ public class UserInfoResponse {
 		this.username = username;
 		this.email = email;
 		this.roles = roles;
+	}
+
+	public UserInfoResponse() {
+	}
+
+	public UserInfoResponse(User user) {
+		this.id = user.getUserId();
+		this.username = user.getEmail();
+		this.email = user.getEmail();
+		this.roles = user.getRoles().stream().map(a -> a.getUserRole().toString()).collect(Collectors.toList());
 	}
 
 	public Long getId() {
@@ -42,4 +55,10 @@ public class UserInfoResponse {
 	public List<String> getRoles() {
 		return roles;
 	}
+
+	@Override
+	public String toString() {
+		return "UserInfoResponse [id=" + id + ", username=" + username + ", email=" + email + ", roles=" + roles + "]";
+	}
+
 }
