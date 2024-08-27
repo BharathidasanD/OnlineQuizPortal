@@ -9,9 +9,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { FacultyPageComponent } from './faculty-page/faculty-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
-import { AddFacultyComponent } from './add-faculty/add-faculty.component';
 import { UserManagerComponent } from './user-manager/user-manager.component';
 import { UserRoleManagerComponent } from './user-role-manager/user-role-manager.component';
+import { QuizSearchComponent } from './quiz-search/quiz-search.component';
+import { QuizRequestStatusComponent } from './quiz-request-status/quiz-request-status.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { RequestManagerComponent } from './request-manager/request-manager.component';
 
 const routes: Routes = [
   { path: 'newquiz', component: CreateNewQuizComponent },
@@ -27,8 +30,11 @@ const routes: Routes = [
   { path: 'user', component: HomeComponent },
   { path: 'faculty', component: FacultyPageComponent },
   { path: 'admin', component: AdminPageComponent },
-  { path: 'addfaculty', component: AddFacultyComponent },
+  { path: 'adduser', component: AddUserComponent },
   {path:'usermanager',component:UserManagerComponent},
+  {path:'registerquiz',component:QuizSearchComponent},
+  {path:'requeststatus',component:QuizRequestStatusComponent},
+  {path:'requestmanager',component:RequestManagerComponent},
   {path:'updateuserrole/:userId',component:UserRoleManagerComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];

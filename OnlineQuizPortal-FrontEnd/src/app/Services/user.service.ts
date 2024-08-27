@@ -45,4 +45,15 @@ export class UserService {
     console.log("Recived user-->"+editUser+"user"+editUser.email);
     return this.http.post<User>(API_URL+'/user/' + 'updateuser',editUser,httpOptions);
   }
+
+  getFacultyId(userId:number):Observable<any>{
+    console.log('recived user id---->'+userId);
+    return this.http.get(API_URL+'/faculty/' + 'getfacultyid/'+userId,{ responseType: 'text' });
+  }
+
+
+  getStudentId(userId:number):Observable<any>{
+    console.log('recived user id---->'+userId);
+    return this.http.get(API_URL+'/student/' + 'getstudentid/'+userId,{ responseType: 'text' });
+  }
 }

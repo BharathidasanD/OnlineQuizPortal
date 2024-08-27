@@ -32,10 +32,14 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { FacultyPageComponent } from './faculty-page/faculty-page.component';
 import { StudentPageComponent } from './student-page/student-page.component';
 import { httpInterceptorProviders } from 'src/helpers/http.interceptor';
-import { AddFacultyComponent } from './add-faculty/add-faculty.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { UserManagerComponent } from './user-manager/user-manager.component';
 import { UserRoleManagerComponent } from './user-role-manager/user-role-manager.component';
+import { QuizSearchComponent } from './quiz-search/quiz-search.component';
+import { QuizRequestStatusComponent } from './quiz-request-status/quiz-request-status.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { RequestStatusComponent } from './request-status/request-status.component';
+import { RequestManagerComponent } from './request-manager/request-manager.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,9 +57,13 @@ import { UserRoleManagerComponent } from './user-role-manager/user-role-manager.
      AdminPageComponent,
      FacultyPageComponent,
      StudentPageComponent,
-     AddFacultyComponent,
      UserManagerComponent,
-     UserRoleManagerComponent
+     UserRoleManagerComponent,
+     QuizSearchComponent,
+     QuizRequestStatusComponent,
+     AddUserComponent,
+     RequestStatusComponent,
+     RequestManagerComponent
   ],
   imports: [
     BrowserModule,

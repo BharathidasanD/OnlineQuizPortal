@@ -1,18 +1,4 @@
 <div class="form">
-    <div class="sidebar">
-        <h4 [style.color]="(message==='Already Registered email or phone')?'red':'green'"> {{message}}
-            <br>
-            <div *ngIf="message!=='Already Registered email or phone' && message.length!==0">
-                <p>Redirecting to Home</p>
-                <p *ngIf="message!=='Already Registered email or phone' && message.length!==0?goHome():false"></p>
-            </div>
-
-        </h4>
-
-        <h3 class="text">Welcome to Learning...</h3>
-
-
-    </div>
 
     <form class="sidebarin" #regForm="ngForm">
         <table class="table-width">
@@ -20,7 +6,7 @@
                 <td>
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Full Name:</mat-label>
-                        <input type="text" matInput required name="Name" [(ngModel)]="facultyModel.facultyName"
+                        <input type="text" matInput required name="Name" [(ngModel)]="userModel.name"
                             #name="ngModel" [class.is-invalid]="name.invalid && name.touched">
                         <small class="text-danger" [class.d-none]="name.valid || name.untouched">name is
                             required</small>
@@ -33,7 +19,7 @@
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Email:</mat-label>
                         <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" matInput
-                            placeholder="agular@gmail.com" [(ngModel)]="facultyModel.email" name="email"
+                            placeholder="agular@gmail.com" [(ngModel)]="userModel.email" name="email"
                             #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
                         <small class="text-danger" [class.d-none]="email.valid || email.untouched">Enter valid
                             email</small>
@@ -46,7 +32,7 @@
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Faculty School:</mat-label>
                         <input type="text" required  matInput
-                             [(ngModel)]="facultyModel.facultySchoolName" name="facultyschool"
+                             [(ngModel)]="userModel.school" name="facultyschool"
                             #facultyschool="ngModel" [class.is-invalid]="facultyschool.invalid && facultyschool.touched">
                         <small class="text-danger" [class.d-none]="facultyschool.valid || facultyschool.untouched">Enter valid
                             Faculty School</small>
@@ -59,7 +45,7 @@
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label>Phone:</mat-label>
                         <input type="tel" required matInput placeholder="9876543210"
-                            [(ngModel)]="facultyModel.facultyContact" name="phone" #phone="ngModel"
+                            [(ngModel)]="userModel.contact" name="phone" #phone="ngModel"
                             [class.is-invalid]="phone.invalid && phone.touched">
                         <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">phone no is
                             required</small>
@@ -71,7 +57,7 @@
                     <mat-form-field appearance="fill" class="full-width">
                         <mat-label> Password:</mat-label>
                         <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required matInput
-                            placeholder="***" [(ngModel)]="facultyModel.password" name="password" #pwd1="ngModel"
+                            placeholder="***" [(ngModel)]="userModel.password" name="password" #pwd1="ngModel"
                             [class.is-invalid]="pwd1.invalid && pwd1.touched">
                         <small class="text-danger" [class.d-none]="pwd1.valid || pwd1.untouched">Must contain at least
                             one number and one uppercase and lowercase letter, and at least 8 or more characters</small>
@@ -82,7 +68,7 @@
                 <td>
                     <mat-form-field appearance="outline" class="full-width">
                         <mat-label>Roles:</mat-label>
-                       <input type="text" required matInput [(ngModel)]="facultyModel.roles" name="Roles"
+                       <input type="text" required matInput [(ngModel)]="userModel.roles" name="Roles"
                             #roles="ngModel" [class.is-invalid]="roles.invalid && roles.touched"> 
                             <section class="example-section">
                                 <mat-checkbox class="example-margin" [(ngModel)]="faculty">Faculty</mat-checkbox>
@@ -108,16 +94,6 @@
                 <td><button mat-raised-button type="submit" [disabled]="regForm.form.invalid"
                         (click)="userRegistration()">Register</button></td>
                 <td><button mat-raised-button type="reset">Reset</button></td>
-            </tr>
-            <tr>
-                <td>
-                    <div style="color:indigo;">
-
-                        <a routerLink="/login">
-                            <h4>Already have a account</h4>
-                        </a>
-                    </div>
-                </td>
             </tr>
         </table>
     </form>

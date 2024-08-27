@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         if(this.isLoggedIn){
           alert("loged in sucessfully...");
           this.route.navigate([this.homePage]);
+          
         }
       },
       error: err => {
@@ -48,7 +49,6 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = true;
       }
     });
-
    
   }
 

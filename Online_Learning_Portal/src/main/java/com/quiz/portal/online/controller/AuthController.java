@@ -70,9 +70,8 @@ public class AuthController {
 	@Autowired
 	JwtUtils jwtUtils;
 
-	Faculty newFac=null;
-	
 	Student newStu=null;
+	Faculty newFac=null;
 	@PostMapping("/signin")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 		System.out.println(loginRequest.getUsername() + " " + loginRequest.getPassword());
@@ -96,6 +95,7 @@ public class AuthController {
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		log.info("Recived data-->"+signUpRequest);
+		
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
 			return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
 		}
@@ -109,7 +109,8 @@ public class AuthController {
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<UserRoles> roles = new HashSet<>();
-
+		
+		
 		if (strRoles == null) {
 			UserRoles userRole = roleRepository.findByUserRole(TypeOfUsers.ROLE_USER)
 					.orElseThrow(() -> new RuntimeException("Error: Role user is not found."));
@@ -148,10 +149,14 @@ public class AuthController {
 		if(newFac !=null) {
 			newFac.setRelatedUser(tempUser);
 			facService.saveFaculty(newFac);
+			log.info("clear cache faculty");
+			newFac=null;
 		}
 		if(newStu!=null) {
 			newStu.setRelatedUser(tempUser);
 			studentService.addNewStudent(newStu);
+			log.info("clear cache student.");
+			newStu=null;
 			
 		}
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));

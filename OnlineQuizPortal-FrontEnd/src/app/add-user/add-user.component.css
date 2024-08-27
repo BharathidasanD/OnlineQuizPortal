@@ -27,9 +27,12 @@
 .sidebar
 {
   float: left;
-  height:485px;
+  height:600px;
   width:200px;
   background-color: midnightblue;
+}
+.sidebarin{
+  height:600px;
 }
 .form
 {

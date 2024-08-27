@@ -25,4 +25,8 @@ public class FacultyService {
 	public long getCount() {
 		return facultyRepo.count();
 	}
+	
+	public String getFacultyIdByUserId(Long userId) {
+		return facultyRepo.fetchFacultyIdByUserId(userId);
+	}
 }

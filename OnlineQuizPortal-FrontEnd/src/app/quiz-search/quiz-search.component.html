@@ -1,0 +1,67 @@
+<mat-form-field class="example-form-field">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" #quizIdFetcher>
+      <button matSuffix mat-icon-button aria-label="Clear" (click)="searchQuiz()">
+        <mat-icon>search</mat-icon>
+      </button>
+  </mat-form-field>
+<!-------------------------------------------------------------------------------------------->
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="S no">
+        <th mat-header-cell *matHeaderCellDef> S No. </th>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Quiz Id">
+        <th mat-header-cell *matHeaderCellDef> Quiz Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.quizId}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Quiz Name">
+        <th mat-header-cell *matHeaderCellDef> Quiz Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.quizName}} </td>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="Faculty Id">
+        <th mat-header-cell *matHeaderCellDef> Faculty Id </th>
+        <td mat-cell *matCellDef="let element; let i = index;"> {{element.facultyId}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Faculty Name">
+        <th mat-header-cell *matHeaderCellDef> Faculty Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.facultyName}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="Faculty School Name">
+        <th mat-header-cell *matHeaderCellDef> Faculty School Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.facultySchoolName}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="Register">
+        <th mat-header-cell *matHeaderCellDef> Register </th>
+        <td mat-cell *matCellDef="let element"> 
+          <button mat-mini-fab color="accent" (click)="register(element)">
+            <mat-icon>remove_red_eye</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  

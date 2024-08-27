@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.quiz.portal.online.dto.QuizSearch;
 import com.quiz.portal.online.model.Quiz;
 import com.quiz.portal.online.model.QuizQuestions;
 import com.quiz.portal.online.service.QuizQuestionsService;
@@ -83,6 +84,14 @@ public class QuizController {
 		log.info("faculty id===>"+facId);
 		log.info("fetched quiz------" + quizService.getQuizByFacultyId(facId));
 		return quizService.getQuizByFacultyId(facId);
+
+	}
+	
+	@GetMapping("/register/{quizId}")
+	public List<QuizSearch> getQuizByQuizId(@PathVariable("quizId") String quizId) {
+		log.info("quiz id===>"+quizId);
+		log.info("fetched quiz------" + quizService.getQuizByQuizId(quizId));
+		return quizService.getQuizByQuizId(quizId);
 
 	}
 	

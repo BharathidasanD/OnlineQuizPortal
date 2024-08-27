@@ -31,14 +31,14 @@ public class FacultyIdGenerator implements IdentifierGenerator {
 		try {
 			log.info("session==>" + session);
 			log.info("object==>" + object);
-			long count = 0;
+			long count = 1;
 
 			ResultSet rs=session.getJdbcConnectionAccess()
 			.obtainConnection()
 			.createStatement()
-			.executeQuery("select count(*) from FACULTY_INFO");
+			.executeQuery("select faculty_id from faculty_info order by faculty_id desc limit 1");
 			if(rs.next()) {
-				count=rs.getInt(1);
+				count=Integer.parseInt(rs.getString(1).substring(3));
 				count++;
 			}
 			if (count < 10) {

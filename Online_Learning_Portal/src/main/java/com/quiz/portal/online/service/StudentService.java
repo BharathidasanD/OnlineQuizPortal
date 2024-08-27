@@ -19,5 +19,7 @@ public class StudentService {
 	public long getCount() {
 		return studentRepo.count();
 	}
-	
+	public String getStudentIdByUserId(Long userId) {
+		return studentRepo.fetchStudentIdByUserId(userId);
+	}
 }

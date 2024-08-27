@@ -61,8 +61,13 @@ public class WebSecurityConfigurator {
 		http.csrf().disable().exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authorizeHttpRequests(auth -> auth.requestMatchers("/api/faculty/**").authenticated()
-						.requestMatchers("/api/student/**").authenticated().requestMatchers("/api/auth/**").permitAll()
-						.requestMatchers("/api/test/**").permitAll().anyRequest().authenticated());
+						.requestMatchers("/api/student/**").authenticated()
+						.requestMatchers("/api/quiz/**").authenticated()
+						.requestMatchers("/api/user/**").authenticated()
+						.requestMatchers("/api/auth/**").permitAll()
+						.requestMatchers("/api/test/**").permitAll()
+						.requestMatchers("/api/quizrequest/**").permitAll()
+						.anyRequest().authenticated());
 
 		http.authenticationProvider(authenticationProvider());
 

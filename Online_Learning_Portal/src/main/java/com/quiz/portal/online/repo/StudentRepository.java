@@ -17,4 +17,7 @@ public interface StudentRepository extends JpaRepository<Student,String> {
 	@Query("delete from Student s where s.relatedUser.userId = :userId")
 	@Transactional
 	public void removeStudentByUserId(@Param("userId") Long userId);
+
+	@Query(value="select student_id from  student_info where related_user_user_id =:userId",nativeQuery = true)
+	public String fetchStudentIdByUserId(Long userId);
 }

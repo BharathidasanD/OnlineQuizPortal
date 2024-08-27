@@ -26,9 +26,9 @@ public class QuizIdGenerators implements IdentifierGenerator {
 				ResultSet rs=session.getJdbcConnectionAccess()
 				.obtainConnection()
 				.createStatement()
-				.executeQuery("select count(*) from QUIZ_INFO");
+				.executeQuery("select quiz_id from quiz_info order by quiz_id desc limit 1");
 				if(rs.next()) {
-					count=rs.getInt(1);
+					count=Integer.parseInt(rs.getString(1).substring(4));
 					count++;
 				}
 				if (count < 10) {

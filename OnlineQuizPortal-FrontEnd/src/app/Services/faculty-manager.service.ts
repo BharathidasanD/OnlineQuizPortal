@@ -2,9 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Faculty } from '../model/faculty';
+import { NewUser } from '../model/NewUser';
 
 
-const API_URL = '/api/faculty/';
+const API_URL = '/api/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,10 +23,11 @@ export class FacultyManagerService {
     return this.http.get(API_URL + 'factest', { responseType: 'text' });
   }
 
-  addNewFaculty(newFaculty:Faculty): Observable<any> {
-    return this.http.post(API_URL + 'addfaculty', {
-     newFaculty
-    },
+  addNewUser(newUser:NewUser): Observable<any> {
+    console.log("recived user--->"+JSON.stringify(newUser))
+    return this.http.post(API_URL + 'user/adduser', 
+     newUser
+    ,
     httpOptions
     );
   }

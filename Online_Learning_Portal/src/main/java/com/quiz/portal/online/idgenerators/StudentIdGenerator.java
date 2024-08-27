@@ -24,14 +24,14 @@ public class StudentIdGenerator implements IdentifierGenerator{
 		try {
 			log.info("session==>" + session);
 			log.info("object==>" + object);
-			long count = 0;
+			long count = 1;
 
 			ResultSet rs=session.getJdbcConnectionAccess()
 			.obtainConnection()
 			.createStatement()
-			.executeQuery("select count(*) from STUDENT_INFO");
+			.executeQuery("select student_id from student_info order by student_id desc limit 1");
 			if(rs.next()) {
-				count=rs.getInt(1);
+				count=Integer.parseInt(rs.getString(1).substring(3));
 				count++;
 			}
 			if (count < 10) {
@@ -47,7 +47,7 @@ public class StudentIdGenerator implements IdentifierGenerator{
 			}
 		} catch (Exception err) {
 			err.printStackTrace();
-			log.error("Not able to generate the Faculty id-->" + err.getMessage());
+			log.error("Not able to generate the student id-->" + err.getMessage());
 
 		}
 
